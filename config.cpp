@@ -1,5 +1,3 @@
-// This mod is a slightly improved version of CatchRain by PoPo - all credit to him: https://steamcommunity.com/sharedfiles/filedetails/?id=2648040518
-
 class CfgPatches
 {
 	class ZenRepairWells
@@ -12,8 +10,7 @@ class CfgPatches
 		requiredAddons[] =
 		{
 			"DZ_Data",
-			"DZ_Scripts",
-			"DZ_Gear_Books",
+			"DZ_Scripts"
 		};
 	};
 };

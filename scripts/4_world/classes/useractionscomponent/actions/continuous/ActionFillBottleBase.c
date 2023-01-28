@@ -1,6 +1,6 @@
 modded class ActionFillBottleBase : ActionContinuousBase
 {
-	// Called while drinking. The reason I do it this way is so the player begins to drink and then is forced out of animation - makes it more immersive.
+	// Called while filling bottle. The reason I do it this way is so the player begins to drink and then is forced out of animation - makes it more immersive/obvious the well is broken.
 	override bool CanContinue(ActionData action_data)
 	{
 		if (!action_data || !action_data.m_Player)
@@ -16,7 +16,7 @@ modded class ActionFillBottleBase : ActionContinuousBase
 			return false;
 		}
 
-		return true;
+		return super.CanContinue(action_data);
 	}
 
 	// Called when action begins server-side. Checks if well is disabled, if so it informs the player client to cancel action.

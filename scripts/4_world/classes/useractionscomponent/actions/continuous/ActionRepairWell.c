@@ -2,6 +2,7 @@ class ActionRepairWellCB : ActionContinuousBaseCB
 {
 	override void CreateActionComponent()
 	{
+		// Make it take longer to repair with a small wrench
 		float time_spent = 18;
 		if (m_ActionData.m_MainItem.GetType() == "PipeWrench")
 			time_spent = 10;

@@ -1,6 +1,6 @@
-modded class ActionDrinkWellContinuous : ActionContinuousBase
+modded class ActionWashHandsWellOne extends ActionInteractLoopBase
 {
-	// Called while drinking. The reason I do it this way is so the player begins to drink and then is forced out of animation - makes it more immersive/obvious the well is broken.
+	// Called while washing hands. The reason I do it this way is so the player begins to drink and then is forced out of animation - makes it more immersive/obvious the well is broken.
 	override bool CanContinue(ActionData action_data)
 	{
 		if (!action_data || !action_data.m_Player)
@@ -12,7 +12,7 @@ modded class ActionDrinkWellContinuous : ActionContinuousBase
 			{
 				action_data.m_Player.ZenWell_SendMsg(GetZenWellsConfig().MessageNotDrink);
 			}
-			
+
 			return false;
 		}
 
@@ -42,4 +42,4 @@ modded class ActionDrinkWellContinuous : ActionContinuousBase
 			action_data.m_Player.SetPreventWellUsage(false); // Do not prevent player from drinking.
 		}
 	}
-}
+};
