@@ -1,6 +1,6 @@
 What Is This?
 
-This mod increases the complexity of survival by adding broken water pumps to the game that require repair before you can use them.
+This mod increases the complexity of survival by adding broken water pumps to the game that require repair before you can use them. You can make all pumps broken by default, or specify only certain pumps that require repair.
 
 When you install the mod and run it for the first time, a JSON config file will be generated in your server profile folder (server_root/profiles/Zenarchist/ZenRepairWells.json)
 
@@ -16,7 +16,7 @@ If you set Invincible to 1 then the well is always repaired (useful if you want 
 
 When a player repairs a well, "Repaired" will be set to 1 and all players can use that well without needing to repair it until its timer runs out.
 
-Once the UNIX timestamp "BreakTime" expires, the well will be set back to broken ("Repaired": 0) and players can no longer use the well without repairing it first.
+Once the UNIX timestamp "BreakTime" expires, the well will be set back to broken ("Repaired": 0) and players can no longer use the well without repairing it first. Each well's repaired status updates on server restarts, so the well will not break again until the timer expires and the server restarts.
 
 An example JSON config is included in the mod folder.
 
