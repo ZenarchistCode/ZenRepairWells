@@ -8,11 +8,6 @@ modded class ActionDrinkWellContinuous : ActionContinuousBase
 
 		if (action_data.m_Player.IsPreventedWellUsage()) // player.IsPreventedWellUsage() is sync'd to client AND server, server sends an explanation - client cancels animation.
 		{
-			if (GetGame().IsDedicatedServer())
-			{
-				action_data.m_Player.ZenWell_SendMsg(GetZenWellsConfig().MessageNotDrink);
-			}
-			
 			return false;
 		}
 
@@ -35,7 +30,11 @@ modded class ActionDrinkWellContinuous : ActionContinuousBase
 
 		if (!well.IsRepaired())
 		{
-			action_data.m_Player.SetPreventWellUsage(true); // Prevent player from drinking.
+			// Prevent player from drinking.
+			action_data.m_Player.SetPreventWellUsage(true); 
+
+			// Send message
+			action_data.m_Player.ZenWell_SendMsgDelayed(GetZenWellsConfig().MessageNotDrink, 3000);
 		}
 		else
 		{

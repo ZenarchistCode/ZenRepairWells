@@ -1,4 +1,4 @@
-modded class ActionWashHandsWellOne extends ActionInteractLoopBase
+modded class ActionWashHandsWell
 {
 	// Called while washing hands. The reason I do it this way is so the player begins to drink and then is forced out of animation - makes it more immersive/obvious the well is broken.
 	override bool CanContinue(ActionData action_data)
