@@ -36,6 +36,7 @@ class ActionRepairWell : ActionContinuousBase
 	{
 		return false;
 	}
+
 	override bool ActionCondition(PlayerBase player, ActionTarget target, ItemBase item)
 	{
 		Well well = Well.Cast(target.GetObject());
